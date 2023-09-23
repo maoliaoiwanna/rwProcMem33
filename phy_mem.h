@@ -172,9 +172,6 @@ MY_STATIC inline size_t get_task_proc_phy_addr(struct task_struct* task, size_t 
 		printk_debug("pgd is null\n");
 		goto out;
 	}
-	printk_debug("pgd_val = 0x%lx pgd addr:0x%lx\n", (unsigned long int)pgd_val(*pgd), (unsigned long int)pgd_val(pgd));
-	printk_debug("init_mm pgd val:0x%lx,pgd addr:0x%lx\n", (unsigned long)pgd_val(*(mm->pgd)), pgd_val((mm->pgd)));
-	printk_debug("pgd_index = %d\n", pgd_index(virt_addr));
 	if (pgd_none(*pgd)) {
 		printk_debug("not mapped in pgd\n");
 		goto out;
